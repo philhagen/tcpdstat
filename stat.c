@@ -43,6 +43,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <math.h>
+#include <string.h>
 
 #include "tcpdstat.h"
 
@@ -567,7 +568,7 @@ static void show_stat(void)
 	    + (double)(end_time.tv_usec - start_time.tv_usec) / 1000000.0;
     printf("TotalTime: %.2f seconds\n", sec);
 
-    printf("TotalCapSize: %.2fMB  CapLen: %d bytes\n",
+    printf("TotalCapSize: %.2fMB  CapLen: %ld bytes\n",
 	   (double)caplen_total/(1024*1024), caplen_max);
     printf("# of packets: %d", tcpdstat[TOTAL].packets);
 
